@@ -7,6 +7,18 @@ The data generated for this integration is random(bounded values) and based on s
 
 The integration can be tried by running the bikesalesapp.py and passing the email address(used to sign up to the Intelligence account) and the API token(available in the Account Management UI in TrueSight Intelligence)
 
+```
+usage: bikesalesapp.py [-h] --email EMAIL --api API [--freq FREQ]
+
+Sample integration with TrueSight Intelligence
+
+optional arguments:
+  -h, --help     show this help message and exit
+  --email EMAIL  Your TrueSight Intelligence account email
+  --api API      Your TrueSight Intelligence API token
+  --freq FREQ    Polling frequency, defaults to 10 secs
+```
+
 The basic flow for the integration is as follows
 
 * Get the credentials (email & API token)
