@@ -19,7 +19,7 @@ def getMetricValue(metricName):
 
 def getEventInfo(timeStamp, appName):
     dealer = dealership[random.randint(0,2)]
-    model = motorcycles[random.randint(0,9)]
+    make = motorcycles[random.randint(0,9)]
     eventvalues = {
         "fingerprintFields": [
             "@title", "@createdAt"
@@ -28,13 +28,13 @@ def getEventInfo(timeStamp, appName):
             "ref": dealer,
             "type": "APPLICATION"
         },
-        "title": "Motorcycle sold at " + dealer + " model:" + model +
+        "title": "Motorcycle sold at " + dealer + " make:" + make +
             " sale price:" + str(random.randint(10000,20000)),
         "createdAt": timeStamp * 1000,
         "eventClass": "BIKE_SALE",
         "properties" : {
             "app_id": appName,
-            "model_sold" : motorcycles[random.randint(0,9)],
+            "make" : motorcycles[random.randint(0,9)],
             "buyer_age" : age[random.randint(0,9)],
             "buyer_state" : state[random.randint(0,9)],
             "buyer_sex" : sex[random.randint(0,1)]
