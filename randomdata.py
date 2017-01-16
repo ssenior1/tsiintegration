@@ -34,13 +34,10 @@ def getEventInfo(timeStamp, appName):
         "eventClass": "BIKE_SALE",
         "properties" : {
             "app_id": appName,
-            "Model Sold" : motorcycles[random.randint(0,9)],
+            "model_sold" : motorcycles[random.randint(0,9)],
             "buyer_age" : age[random.randint(0,9)],
             "buyer_state" : state[random.randint(0,9)],
             "buyer_sex" : sex[random.randint(0,1)]
         }
     }
     return eventvalues
-
-#print(getMetricValue("Sales"))
-#print(getEventInfo(100, "Test"))
