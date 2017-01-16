@@ -5,7 +5,15 @@
 The intent of these files to to create a sample integration with TrueSight Intelligence for a fictitious Bike Dealership operating out of 3 locations(San Jose, Houston & Las Vegas). The integration generates metric data and also events associated with the data collected from the Dealership.
 The data generated for this integration is random(bounded values) and based on some of the sample structures created in the file *randomdata.py*
 
-The basic
+The integration can be tried by running the bikesalesapp.py and passing the email address(used to sign up to the Intelligence account) and the API token(available in the Account Management UI in TrueSight Intelligence)
+
+The basic flow for the integration is as follows
+
+* Get the credentials (email & API token)
+* Define(Create) the metrics to be sent (one time setup)
+* Send the measurements
+* Send the events
+* Wait for the polling duration and resend the measurements and events
 
 # Details about the data being sent
 
