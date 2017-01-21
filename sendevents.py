@@ -24,6 +24,6 @@ def postEvent(timeStamp, applicationName, userName, apiToken):
             " for source " + eventDict["source"]["ref"] + " @ time:" +
             str(eventDict["createdAt"]))
     else:
-        print("Unable to send measurement " + eventDict["title"] +
+        print("Unable to send event " + eventDict["title"] +
             " for source " + eventDict["source"]["ref"] + " @ time:" +
             str(eventDict["createdAt"]) + " Error code:" + str(response.status_code))

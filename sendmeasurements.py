@@ -7,8 +7,6 @@ import randomdata
 
 # api endpoint
 MEASURES_ADD_URL = "https://api.truesight.bmc.com/v1/measurements"
-#USER_NAME = "nitnav@yahoo.com"
-#API_TOKEN = "8ce1ec5c-4a62-4028-8744-b1ab67882334"
 HEADERS = {'Content-Type': 'application/json'}
 APP_NAME = "Bike Dealership"
 
