@@ -2,6 +2,7 @@ import sendmeasurements as sm
 import sendevents as se
 import definemetrics as dm
 import time
+import random
 import argparse
 
 # Help for the CLI
@@ -17,17 +18,35 @@ apiToken = args.api
 pollingFrequency = args.freq
 
 # Metadata definition for the metrics, this will create the metric definitions
-# if the do not exis
-dm.defineAllMetrics(userName, apiToken)
+# if they do not exist
+
+# remove comment once connected to API
+# dm.defineAllMetrics(userName, apiToken)
 
 # Loop based on the polling Frequency
 while True:
     # Measurement data for the 3 locations
-    sm.sendMeasurements("San Jose Dealership", userName, apiToken)
-    sm.sendMeasurements("Houston Dealership", userName, apiToken)
-    sm.sendMeasurements("Las Vegas Dealership", userName, apiToken)
 
-    # Event data to indicate sales
-    se.sendEvent(userName, apiToken)
+    # create metrics to send later once good with events
 
-    time.sleep(pollingFrequency)
+    # sm.sendMeasurements("San Jose Dealership", userName, apiToken)
+    # sm.sendMeasurements("Houston Dealership", userName, apiToken)
+    # sm.sendMeasurements("Las Vegas Dealership", userName, apiToken)
+
+    # Event data to indicate login issues
+
+    createConsistentError = False
+    sleepTime = random.randint(10, 30)
+    se.postEvent(userName, apiToken, createConsistentError)
+    time.sleep(sleepTime)
+
+    # random interval needs to increase
+    if random.randint(1, 2) is 1:
+        createConsistentError = True
+        numberOfConsistentErrors = random.randint(50, 150)
+        sleepTime = random.randint(3, 10)
+        time.sleep(sleepTime)
+        se.postEvent(userName, apiToken, createConsistentError)
+
+# Live action - push random errors in an ongoing basis of between 2 per minute and 6 per minute
+#               at random intervals, also start sending consistent error messages (still with the random errors at the same speed)

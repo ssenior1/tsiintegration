@@ -8,7 +8,7 @@ import randomdata
 # api endpoint
 MEASURES_ADD_URL = "https://api.truesight.bmc.com/v1/measurements"
 HEADERS = {'Content-Type': 'application/json'}
-APP_NAME = "Bike Dealership"
+APP_NAME = "Banking portal"
 
 def sendMeasurements(sourceName, userName, apiToken):
     currentTime = round(time.time())
